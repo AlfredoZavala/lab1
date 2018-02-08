@@ -86,13 +86,13 @@ class Global {
 	}
 
 	/*
-	   bool openFaucet = true;
-	   Shape faucet;
-	   faucet.width = 10;
-	   faucet.height = 10;
-	   faucet.center.x = 35;
-	   faucet.center.y = 500;
-	   */
+	 bool openFaucet = true;
+	Shape faucet;
+	faucet.width = 10;
+	faucet.height = 10;
+	faucet.center.x = 35;
+	faucet.center.y = 500;
+*/
 
 } g;
 
@@ -180,7 +180,7 @@ int main()
 	    done = check_keys(&e);
 	}
 	for( int p = 0 ; p < 20 ; p++ ) {
-	    makeParticle(100, 550);
+		makeParticle(100, 550);
 	}
 	movement();
 	render();
@@ -200,13 +200,6 @@ void init_opengl(void)
     glOrtho(0, g.xres, 0, g.yres, -1, 1);
     //Set the screen background color
     glClearColor(0.1, 0.1, 0.1, 1.0);
-
-    // Do this to allow fonts
-    glEnable(GL_TEXTURE_2D);
-    initialize_fonts();
-
-    //20bba0
-
 }
 
 void makeParticle(int x, int y)
@@ -390,37 +383,14 @@ void render()
 	glPopMatrix();
 
     }
-
+    
+   
     //
     //Draw your 2D text here
-    Rect r;
-
-    r.bot = g.yres - 20;
-    r.left = 10;
-    r.center = 0;
-
-    string disp_text [5] = {"ab", "bb", "cb", "db", "eb"};
-
-    for( int i = 0; i < NUM_BOXES ; i++ ) {
-	s = &g.box[i];
-
-	r.bot = s->center.y;
-	r.left = s->center.x;
-	r.center = -20;
-	
-	if( i == 0 )	
-	    ggprint8b(&r, 16, 0x00ffff00, "Requirements");
-	if( i == 1 )	
-	    ggprint8b(&r, 16, 0x00ffff00, "Design");
-	if( i == 2 )	
-	    ggprint8b(&r, 16, 0x00ffff00, "Coding");
-	if( i == 3 )	
-	    ggprint8b(&r, 16, 0x00ffff00, "Testing");
-	if( i == 4 )	
-	    ggprint8b(&r, 16, 0x00ffff00, "Maintinence");
 
 
-    }
+
+
 }
 
 
